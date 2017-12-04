@@ -1,0 +1,19 @@
+--- lua-5.3.4/src/luac.c	2015-03-12 02:58:27.000000000 +0100
++++ luac.c	2017-12-04 13:33:33.000000000 +0100
+@@ -189,7 +189,7 @@
+  return 0;
+ }
+ 
+-int main(int argc, char* argv[])
++int luac_main(int argc, char* argv[])
+ {
+  lua_State* L;
+  int i=doargs(argc,argv);
+@@ -202,6 +202,7 @@
+  lua_pushlightuserdata(L,argv);
+  if (lua_pcall(L,2,0,0)!=LUA_OK) fatal(lua_tostring(L,-1));
+  lua_close(L);
++ L = NULL; 
+  return EXIT_SUCCESS;
+ }
+ 

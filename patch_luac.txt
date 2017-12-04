@@ -1,0 +1,21 @@
+--- lua.c	2017-12-04 12:50:40.000000000 +0100
++++ ../lua53/src/lua.c	2017-10-25 21:52:18.000000000 +0200
+@@ -593,7 +593,7 @@
+ }
+ 
+ 
+-int main (int argc, char **argv) {
++int lua_main (int argc, char **argv) {
+   int status, result;
+   lua_State *L = luaL_newstate();  /* create state */
+   if (L == NULL) {
+@@ -607,6 +607,9 @@
+   result = lua_toboolean(L, -1);  /* get result */
+   report(L, status);
+   lua_close(L);
++    // Remember to re-init variables:
++  L = NULL;
++  globalL = NULL;
+   return (result && status == LUA_OK) ? EXIT_SUCCESS : EXIT_FAILURE;
+ }
+ 
