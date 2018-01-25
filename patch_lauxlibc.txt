@@ -1,0 +1,19 @@
+--- tmp/lua-5.3.4/src/lauxlib.c	2016-12-20 19:37:00.000000000 +0100
++++ lua-5.3.4/src/lauxlib.c	2018-01-25 10:55:19.000000000 +0100
+@@ -25,6 +25,7 @@
+ #include "lua.h"
+ 
+ #include "lauxlib.h"
++#include "ios_error.h"
+ 
+ 
+ /*
+@@ -708,7 +709,7 @@
+   int fnameindex = lua_gettop(L) + 1;  /* index of filename on the stack */
+   if (filename == NULL) {
+     lua_pushliteral(L, "=stdin");
+-    lf.f = stdin;
++    lf.f = thread_stdin;
+   }
+   else {
+     lua_pushfstring(L, "@%s", filename);

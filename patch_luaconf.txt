@@ -1,6 +1,6 @@
---- lua-5.3.4/src/luaconf_orig.h	2016-12-22 14:08:50.000000000 +0100
-+++ lua-5.3.4/src/luaconf.h	2017-12-04 13:15:00.000000000 +0100
-@@ -71,6 +71,13 @@
+--- tmp/lua-5.3.4/src/luaconf.h	2016-12-22 14:08:50.000000000 +0100
++++ lua-5.3.4/src/luaconf.h	2018-01-25 10:48:30.000000000 +0100
+@@ -71,6 +71,11 @@
  #define LUA_USE_READLINE	/* needs an extra library: -lreadline */
  #endif
  
@@ -8,8 +8,6 @@
 +#define LUA_USE_POSIX
 +#define LUA_USE_DLOPEN		/* MacOS does not need -ldl */
 +// #define LUA_USE_READLINE	/* needs an extra library: -lreadline */
-+extern int ios_system(char* cmd);
-+#define system ios_system
 +#endif
  
  /*

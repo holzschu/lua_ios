@@ -1,0 +1,23 @@
+--- tmp/lua-5.3.4/src/liolib.c	2016-12-20 19:37:00.000000000 +0100
++++ lua-5.3.4/src/liolib.c	2018-01-25 10:48:10.000000000 +0100
+@@ -21,6 +21,7 @@
+ 
+ #include "lauxlib.h"
+ #include "lualib.h"
++#include "ios_error.h"
+ 
+ 
+ 
+@@ -763,9 +764,9 @@
+   luaL_newlib(L, iolib);  /* new module */
+   createmeta(L);
+   /* create (and set) default files */
+-  createstdfile(L, stdin, IO_INPUT, "stdin");
+-  createstdfile(L, stdout, IO_OUTPUT, "stdout");
+-  createstdfile(L, stderr, NULL, "stderr");
++  createstdfile(L, thread_stdin, IO_INPUT, "stdin");
++  createstdfile(L, thread_stdout, IO_OUTPUT, "stdout");
++  createstdfile(L, thread_stderr, NULL, "stderr");
+   return 1;
+ }
+ 

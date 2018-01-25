@@ -1,6 +1,42 @@
---- lua.c	2017-12-04 12:50:40.000000000 +0100
-+++ ../lua53/src/lua.c	2017-10-25 21:52:18.000000000 +0200
-@@ -593,7 +593,7 @@
+--- tmp/lua-5.3.4/src/lua.c	2017-01-12 18:14:26.000000000 +0100
++++ lua-5.3.4/src/lua.c	2018-01-25 10:55:42.000000000 +0100
+@@ -19,7 +19,7 @@
+ #include "lauxlib.h"
+ #include "lualib.h"
+ 
+-
++#include "ios_error.h"
+ 
+ #if !defined(LUA_PROMPT)
+ #define LUA_PROMPT		"> "
+@@ -50,14 +50,15 @@
+ #if defined(LUA_USE_POSIX)	/* { */
+ 
+ #include <unistd.h>
+-#define lua_stdin_is_tty()	isatty(0)
++// #define lua_stdin_is_tty()	isatty(0)
++#define lua_stdin_is_tty()    ((fileno(thread_stdin) == fileno(stdin)))
+ 
+ #elif defined(LUA_USE_WINDOWS)	/* }{ */
+ 
+ #include <io.h>
+ #include <windows.h>
+ 
+-#define lua_stdin_is_tty()	_isatty(_fileno(stdin))
++#define lua_stdin_is_tty()	_isatty(_fileno(thread_stdin))
+ 
+ #else				/* }{ */
+ 
+@@ -88,7 +89,7 @@
+ #else				/* }{ */
+ 
+ #define lua_readline(L,b,p) \
+-        ((void)L, fputs(p, stdout), fflush(stdout),  /* show prompt */ \
++        ((void)L, fputs(p, thread_stdout), fflush(thread_stdout),  /* show prompt */ \
+         fgets(b, LUA_MAXINPUT, stdin) != NULL)  /* get line */
+ #define lua_saveline(L,line)	{ (void)L; (void)line; }
+ #define lua_freeline(L,b)	{ (void)L; (void)b; }
+@@ -593,7 +594,7 @@
  }
  
  
@@ -9,7 +45,7 @@
    int status, result;
    lua_State *L = luaL_newstate();  /* create state */
    if (L == NULL) {
-@@ -607,6 +607,9 @@
+@@ -607,6 +608,9 @@
    result = lua_toboolean(L, -1);  /* get result */
    report(L, status);
    lua_close(L);

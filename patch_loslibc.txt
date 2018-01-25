@@ -1,0 +1,10 @@
+--- tmp/lua-5.3.4/src/loslib.c	2016-07-18 19:58:58.000000000 +0200
++++ lua-5.3.4/src/loslib.c	2018-01-25 10:51:43.000000000 +0100
+@@ -20,6 +20,7 @@
+ 
+ #include "lauxlib.h"
+ #include "lualib.h"
++#include "ios_error.h"
+ 
+ 
+ /*
