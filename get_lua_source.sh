@@ -5,6 +5,11 @@ LUAVERSION=lua-5.3.4
 curl https://www.lua.org/ftp/$LUAVERSION.tar.gz -O
 tar xfz $LUAVERSION.tar.gz
 rm $LUAVERSION.tar.gz
+# get ios_system.framework
+echo "Downloading ios_system.framework"
+curl -OL $HHROOT/ios_system/releases/download/v$IOS_SYSTEM_VER/smallRelease.tar.gz
+( tar -xzf smallRelease.tar.gz --strip 1 && rm smallRelease.tar.gz ) || { echo "ios_system failed to download"; exit 1; }
+
 
 # Patch sources:
 patch $LUAVERSION/src/lua.c < patch_luac.txt
