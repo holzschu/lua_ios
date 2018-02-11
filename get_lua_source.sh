@@ -1,6 +1,7 @@
 #! /bin/sh
 
 LUAVERSION=lua-5.3.4
+IOS_SYSTEM_VER=1.1
 
 curl https://www.lua.org/ftp/$LUAVERSION.tar.gz -O
 tar xfz $LUAVERSION.tar.gz
