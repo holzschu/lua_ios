@@ -1,5 +1,5 @@
 --- tmp/lua-5.3.4/src/luaconf.h	2016-12-22 14:08:50.000000000 +0100
-+++ lua-5.3.4/src/luaconf.h	2018-01-25 10:48:30.000000000 +0100
++++ lua-5.3.4/src/luaconf.h	2018-02-09 23:28:55.000000000 +0100
 @@ -71,6 +71,11 @@
  #define LUA_USE_READLINE	/* needs an extra library: -lreadline */
  #endif
