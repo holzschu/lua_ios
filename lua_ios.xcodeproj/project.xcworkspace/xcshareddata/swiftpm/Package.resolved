@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ios_system",
+        "repositoryURL": "https://github.com/holzschu/ios_system.git",
+        "state": {
+          "branch": "master",
+          "revision": "a1b67a74e94be803daa39215211c7f18f6999372",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
