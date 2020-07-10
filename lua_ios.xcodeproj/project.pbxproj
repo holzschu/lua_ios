@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2226920524B5B1F3001A0D2F /* ios_system.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2226920424B5B1D6001A0D2F /* ios_system.xcframework */; };
-		2226920624B5B1F3001A0D2F /* ios_system.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2226920424B5B1D6001A0D2F /* ios_system.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2262086F1FD55B6600E93426 /* lua_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 2262086D1FD55B6600E93426 /* lua_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226208981FD5668100E93426 /* lparser.c in Sources */ = {isa = PBXBuildFile; fileRef = 226208751FD5667D00E93426 /* lparser.c */; };
 		226208991FD5668100E93426 /* lbitlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 226208761FD5667D00E93426 /* lbitlib.c */; };
@@ -54,7 +53,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2226920624B5B1F3001A0D2F /* ios_system.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
