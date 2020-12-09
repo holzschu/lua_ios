@@ -9,7 +9,7 @@ curl -OL $HHROOT/ios_system/releases/download/$IOS_SYSTEM_VER/ios_error.h
 
 # First, creat all frameworks for both architectures: 
 xcodebuild -project lua_ios.xcodeproj -alltargets -sdk iphoneos -configuration Release -quiet
-xcodebuild -project lua_ios.xcodeproj -alltargets -sdk iphonesimulator -configuration Release -quiet
+xcodebuild -project lua_ios.xcodeproj -alltargets -sdk iphonesimulator -arch x86_64 -configuration Release -quiet
 
 # then, merge them into XCframeworks:
 for framework in lua_ios

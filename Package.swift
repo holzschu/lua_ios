@@ -13,7 +13,7 @@ let package = Package(
         .binaryTarget(
             name: "lua_ios",
             url: "https://github.com/holzschu/lua_ios/releases/download/1.0/lua_ios.xcframework.zip",
-            checksum: "6a42e114a9d49cf71f0c6e18bfa9b4dc5b9dbdbe67506c2b5ade16cfb4aca4cf"
+            checksum: "2ff2f5ebe6c33c0ef6b6a9d0a927a2bf8036432e14c40d9d0f2e1e95ceb2431b"
         )
     ]
 )
