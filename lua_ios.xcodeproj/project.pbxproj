@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2226920524B5B1F3001A0D2F /* ios_system.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2226920424B5B1D6001A0D2F /* ios_system.xcframework */; };
 		2262086F1FD55B6600E93426 /* lua_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 2262086D1FD55B6600E93426 /* lua_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		226208981FD5668100E93426 /* lparser.c in Sources */ = {isa = PBXBuildFile; fileRef = 226208751FD5667D00E93426 /* lparser.c */; };
 		226208991FD5668100E93426 /* lbitlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 226208761FD5667D00E93426 /* lbitlib.c */; };
@@ -44,6 +43,7 @@
 		226208B81FD5668100E93426 /* llex.c in Sources */ = {isa = PBXBuildFile; fileRef = 226208951FD5668000E93426 /* llex.c */; };
 		226208B91FD5668100E93426 /* lobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 226208961FD5668000E93426 /* lobject.c */; };
 		226208BA1FD5668100E93426 /* loslib.c in Sources */ = {isa = PBXBuildFile; fileRef = 226208971FD5668100E93426 /* loslib.c */; };
+		228E142025C98FDD0065D825 /* ios_system.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228E141F25C98FDD0065D825 /* ios_system.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,7 +60,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2226920424B5B1D6001A0D2F /* ios_system.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ios_system.xcframework; path = "../../../Library/Developer/Xcode/DerivedData/lua_ios-aypdikiflnrllcezefcczfrmzagt/SourcePackages/artifacts/ios_system/ios_system.xcframework"; sourceTree = "<group>"; };
 		2262086A1FD55B6600E93426 /* lua_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = lua_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2262086D1FD55B6600E93426 /* lua_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lua_ios.h; sourceTree = "<group>"; };
 		2262086E1FD55B6600E93426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		226208951FD5668000E93426 /* llex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = llex.c; path = "lua-5.3.4/src/llex.c"; sourceTree = SOURCE_ROOT; };
 		226208961FD5668000E93426 /* lobject.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lobject.c; path = "lua-5.3.4/src/lobject.c"; sourceTree = SOURCE_ROOT; };
 		226208971FD5668100E93426 /* loslib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = loslib.c; path = "lua-5.3.4/src/loslib.c"; sourceTree = SOURCE_ROOT; };
+		228E141F25C98FDD0065D825 /* ios_system.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ios_system.xcframework; path = xcfs/.build/artifacts/xcfs/ios_system.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2226920524B5B1F3001A0D2F /* ios_system.xcframework in Frameworks */,
+				228E142025C98FDD0065D825 /* ios_system.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +177,7 @@
 		226208CC1FD56EAD00E93426 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2226920424B5B1D6001A0D2F /* ios_system.xcframework */,
+				228E141F25C98FDD0065D825 /* ios_system.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -241,7 +241,6 @@
 			);
 			mainGroup = 226208601FD55B6600E93426;
 			packageReferences = (
-				2226920124B5B1CA001A0D2F /* XCRemoteSwiftPackageReference "ios_system" */,
 			);
 			productRefGroup = 2262086B1FD55B6600E93426 /* Products */;
 			projectDirPath = "";
@@ -512,17 +511,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2226920124B5B1CA001A0D2F /* XCRemoteSwiftPackageReference "ios_system" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/holzschu/ios_system.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 226208611FD55B6600E93426 /* Project object */;
 }
