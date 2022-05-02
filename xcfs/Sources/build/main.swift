@@ -7,7 +7,7 @@ import FMake
 OutputLevel.default = .error
 
 enum Config {
-    static let iOSSystemVersion = "v2.7.0"
+    static let iOSSystemVersion = "v3.0.0"
     static let iOSSystemRoot    = "https://github.com/holzschu"
 
     static var iOSSystemErrorHURL: String {

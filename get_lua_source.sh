@@ -2,14 +2,14 @@
 
 HHROOT="https://github.com/holzschu"
 LUAVERSION=lua-5.3.4
-IOS_SYSTEM_VER=2.6
+IOS_SYSTEM_VER=3.0
 
 curl https://www.lua.org/ftp/$LUAVERSION.tar.gz -O
 tar xfz $LUAVERSION.tar.gz
 rm $LUAVERSION.tar.gz
 # get ios_system.framework
 echo "Downloading header file:"
-curl -OL $HHROOT/ios_system/releases/download/$IOS_SYSTEM_VER/ios_error.h 
+curl -OL $HHROOT/ios_system/releases/download/$IOS_SYSTEM_VER/lua_ios/ios_error.h 
 
 
 # Patch sources:
