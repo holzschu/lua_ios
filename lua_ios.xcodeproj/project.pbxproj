@@ -43,6 +43,8 @@
 		226208B91FD5668100E93426 /* lobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 226208961FD5668000E93426 /* lobject.c */; };
 		226208BA1FD5668100E93426 /* loslib.c in Sources */ = {isa = PBXBuildFile; fileRef = 226208971FD5668100E93426 /* loslib.c */; };
 		228E142025C98FDD0065D825 /* ios_system.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228E141F25C98FDD0065D825 /* ios_system.xcframework */; };
+		FABC68F027F63A5B003D29A7 /* ios_error.h in Headers */ = {isa = PBXBuildFile; fileRef = FABC68EF27F63A5B003D29A7 /* ios_error.h */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -164,6 +166,7 @@
 				226208871FD5667E00E93426 /* lundump.c */,
 				2262087F1FD5667E00E93426 /* lutf8lib.c */,
 				226208821FD5667E00E93426 /* lvm.c */,
+				FABC68EF27F63A5B003D29A7 /* ios_error.h */,
 				226208781FD5667D00E93426 /* lzio.c */,
 				2262086D1FD55B6600E93426 /* lua_ios.h */,
 				2262086E1FD55B6600E93426 /* Info.plist */,
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2262086F1FD55B6600E93426 /* lua_ios.h in Headers */,
+				FABC68F027F63A5B003D29A7 /* ios_error.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
