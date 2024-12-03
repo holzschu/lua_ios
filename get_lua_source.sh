@@ -1,8 +1,8 @@
 #! /bin/sh
 
 HHROOT="https://github.com/holzschu"
-LUAVERSION=lua-5.3.4
-IOS_SYSTEM_VER=2.6
+LUAVERSION=lua-5.4.4
+IOS_SYSTEM_VER=3.0.2
 
 curl https://www.lua.org/ftp/$LUAVERSION.tar.gz -O
 tar xfz $LUAVERSION.tar.gz
