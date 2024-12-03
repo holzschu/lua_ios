@@ -1,5 +1,5 @@
---- tmp/lua-5.3.4/src/ldblib.c	2015-11-23 12:29:43.000000000 +0100
-+++ lua-5.3.4/src/ldblib.c	2018-02-09 23:28:55.000000000 +0100
+--- tmp/lua-5.4.4/src/ldblib.c	2022-01-13 12:24:41
++++ lua-5.4.4/src/ldblib.c	2022-12-09 14:51:33
 @@ -18,7 +18,7 @@
  
  #include "lauxlib.h"
@@ -8,13 +8,13 @@
 +#include "ios_error.h"
  
  /*
- ** The hook table at registry[&HOOKKEY] maps threads to their current
-@@ -403,7 +403,7 @@
+ ** The hook table at registry[HOOKKEY] maps threads to their current
+@@ -421,7 +421,7 @@
    for (;;) {
      char buffer[250];
      lua_writestringerror("%s", "lua_debug> ");
--    if (fgets(buffer, sizeof(buffer), stdin) == 0 ||
-+    if (fgets(buffer, sizeof(buffer), thread_stdin) == 0 ||
+-    if (fgets(buffer, sizeof(buffer), stdin) == NULL ||
++    if (fgets(buffer, sizeof(buffer), thread_stdin) == NULL ||
          strcmp(buffer, "cont\n") == 0)
        return 0;
      if (luaL_loadbuffer(L, buffer, strlen(buffer), "=(debug command)") ||

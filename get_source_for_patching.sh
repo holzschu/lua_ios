@@ -1,6 +1,6 @@
 #! /bin/sh
 
-LUAVERSION=lua-5.3.4
+LUAVERSION=lua-5.4.4
 
 echo "Getting the reference source"
 mkdir tmp

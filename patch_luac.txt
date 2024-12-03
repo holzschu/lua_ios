@@ -1,15 +1,15 @@
---- tmp/lua-5.3.4/src/lua.c	2017-01-12 18:14:26.000000000 +0100
-+++ lua-5.3.4/src/lua.c	2018-03-28 09:56:34.000000000 +0200
-@@ -19,7 +19,7 @@
+--- tmp/lua-5.4.4/src/lua.c	2022-01-13 12:24:43
++++ lua-5.4.4/src/lua.c	2022-12-09 14:14:55
+@@ -19,6 +19,8 @@
+ 
  #include "lauxlib.h"
  #include "lualib.h"
- 
--
++
 +#include "ios_error.h"
  
- #if !defined(LUA_PROMPT)
- #define LUA_PROMPT		"> "
-@@ -50,14 +50,14 @@
+ 
+ #if !defined(LUA_PROGNAME)
+@@ -392,14 +394,14 @@
  #if defined(LUA_USE_POSIX)	/* { */
  
  #include <unistd.h>
@@ -26,16 +26,18 @@
  
  #else				/* }{ */
  
-@@ -88,7 +88,7 @@
- #else				/* }{ */
+@@ -432,8 +434,8 @@
  
+ #define lua_initreadline(L)  ((void)L)
  #define lua_readline(L,b,p) \
 -        ((void)L, fputs(p, stdout), fflush(stdout),  /* show prompt */ \
+-        fgets(b, LUA_MAXINPUT, stdin) != NULL)  /* get line */
 +        ((void)L, fputs(p, thread_stdout), fflush(thread_stdout),  /* show prompt */ \
-         fgets(b, LUA_MAXINPUT, stdin) != NULL)  /* get line */
++        fgets(b, LUA_MAXINPUT, thread_stdin) != NULL)  /* get line */
  #define lua_saveline(L,line)	{ (void)L; (void)line; }
  #define lua_freeline(L,b)	{ (void)L; (void)b; }
-@@ -593,7 +593,7 @@
+ 
+@@ -647,7 +649,7 @@
  }
  
  
@@ -44,11 +46,11 @@
    int status, result;
    lua_State *L = luaL_newstate();  /* create state */
    if (L == NULL) {
-@@ -607,6 +607,9 @@
+@@ -661,6 +663,9 @@
    result = lua_toboolean(L, -1);  /* get result */
    report(L, status);
    lua_close(L);
-+    // Remember to re-init variables:
++    // iOS: Remember to re-init variables:
 +  L = NULL;
 +  globalL = NULL;
    return (result && status == LUA_OK) ? EXIT_SUCCESS : EXIT_FAILURE;

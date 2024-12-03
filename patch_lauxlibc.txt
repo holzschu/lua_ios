@@ -1,5 +1,5 @@
---- tmp/lua-5.3.4/src/lauxlib.c	2016-12-20 19:37:00.000000000 +0100
-+++ lua-5.3.4/src/lauxlib.c	2018-02-09 23:28:55.000000000 +0100
+--- tmp/lua-5.4.4/src/lauxlib.c	2022-01-13 12:24:40
++++ lua-5.4.4/src/lauxlib.c	2022-12-09 14:11:27
 @@ -25,6 +25,7 @@
  #include "lua.h"
  
@@ -7,13 +7,16 @@
 +#include "ios_error.h"
  
  
- /*
-@@ -708,7 +709,7 @@
+ #if !defined(MAX_SIZET)
+@@ -781,7 +782,11 @@
    int fnameindex = lua_gettop(L) + 1;  /* index of filename on the stack */
    if (filename == NULL) {
      lua_pushliteral(L, "=stdin");
--    lf.f = stdin;
++#ifdef __IPHONE__
 +    lf.f = thread_stdin;
++#else
+     lf.f = stdin;
++#endif
    }
    else {
      lua_pushfstring(L, "@%s", filename);

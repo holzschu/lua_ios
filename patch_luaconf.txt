@@ -1,7 +1,7 @@
---- tmp/lua-5.3.4/src/luaconf.h	2016-12-22 14:08:50.000000000 +0100
-+++ lua-5.3.4/src/luaconf.h	2018-02-09 23:28:55.000000000 +0100
-@@ -71,6 +71,11 @@
- #define LUA_USE_READLINE	/* needs an extra library: -lreadline */
+--- tmp/lua-5.4.4/src/luaconf.h	2022-01-13 12:24:43
++++ lua-5.4.4/src/luaconf.h	2022-12-09 14:11:27
+@@ -69,6 +69,11 @@
+ #define LUA_USE_DLOPEN		/* MacOS does not need -ldl */
  #endif
  
 +#if defined(LUA_USE_IOS)
@@ -11,4 +11,4 @@
 +#endif
  
  /*
- @@ LUA_C89_NUMBERS ensures that Lua uses the largest types available for
+ @@ LUAI_IS32INT is true iff 'int' has (at least) 32 bits.
