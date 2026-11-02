@@ -443,7 +443,7 @@
 					"-D",
 					LUA_USE_IOS,
 					"-I",
-					../ios_system/,
+					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "Acube.lua-ios";
@@ -479,7 +479,7 @@
 					"-D",
 					LUA_USE_IOS,
 					"-I",
-					../ios_system/,
+					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "Acube.lua-ios";
